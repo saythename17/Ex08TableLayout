@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="17dp"
+    tools:context=".MainActivity">
+<!--TableLayout 안에서 width & height :자동 wrap
+    TableLayout's orientation  : (default) vertical-->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+<!--첫번째 줄 (Raw)-TableRaw's width : (default)match_parent
+    TableRaw's orientation : (default) horizontal-->
+        <TableRow>
+            <Button android:text="1"/>
+            <Button android:text="2"/>
+            <Button android:text="3"/>
+        </TableRow>
+<!--    뷰의 개수가 달라도 맞춰줌-->
+        <TableRow>
+            <Button android:text="4"/>
+            <Button android:text="5"/>
+        </TableRow>
+        <TableRow>
+            <Button android:text="7"/>
+            <Button android:text="8"/>
+            <Button android:text="9"/>
+        </TableRow>
+    </TableLayout>
+
+<!--    기본 뷰의 사이즈가 wrap 인 뷰들을 균등배치 -->
+    <TableLayout
+        android:layout_marginTop="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+    <TableRow>
+        <Button/>        <Button/>        <Button/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button />
+        <Button android:layout_column="2" />    <Button/>
+<!--    <Button android:layout_column="1"layout_column :순서변경 X/>-->
+    </TableRow>
+
+    <TableRow>
+        <Button android:layout_span="2"/>
+    </TableRow>
+        <Button/>
+    </TableLayout>
+    <TableLayout
+        android:layout_marginTop="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*">
+        <TableRow>
+            <Button/> <Button/> <Button/> <Button/> <Button/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
